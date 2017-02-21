@@ -1,0 +1,20 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/jquery": "^2.0.40",
+    "body-parser": "*",
+    "ejs": "*",
+    "express": "*",
+    "mongojs": "*",
+    "nodemon": "^1.11.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
