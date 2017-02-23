@@ -1,1 +1,14 @@
-TASKS
+<form class="well" (submit)="addTask($event)">
+    <div class="form-group">
+        <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="ADD A TASK TO DO">
+    </div>
+</form>
+
+<h5>TODO:</h5>
+<div class="task-list">
+    <div class = "col-lg-12" *ngFor = "let task of tasks" style="height: 50px; width: 85%; margin-left: 20px;">
+        
+            <input type="checkbox"style="margin-right: 20px;">{{task.title}}<input type="button" value="Delete" class="btn btn-danger" style="float: right;">
+        
+    </div>
+</div>
