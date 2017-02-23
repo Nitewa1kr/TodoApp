@@ -46,6 +46,17 @@ router.post('/task', function(req, res, next){
     }
 });
 
+//DELETE, DELETE TASK
+router.delete('/task/:id', function(req,res,next){
+    db.tasks.remove({_id: mongojs.ObjectId(req.params.id)}, function(err, task){
+        if(err)
+        {
+            res.send(err);
+        }
+        res.json(task);
+    });
+});
+
 //UPDATE, PUT SINGLE TASK
 router.put('/task/:id', function(req,res,next){
     var task = req.body;
@@ -57,7 +68,7 @@ router.put('/task/:id', function(req,res,next){
     }
     if(task.title)
     {
-        updateTask.isDone = task.title;
+        updateTask.title = task.title;
     }
     if(!updateTask)
     {
@@ -65,27 +76,17 @@ router.put('/task/:id', function(req,res,next){
         res.json({
             "error":"Bad Data"
         });
-    }else{
+    }
+    else
+    {
         db.tasks.update({_id: mongojs.ObjectId(req.params.id)}, updateTask, {}, function(err, task){
         if(err)
         {
             res.send(err);
         }
         res.json(task);
-    });
-    }
-    
-});
-
-//DELETE, DELETE TASK
-router.delete('/task/:id', function(req,res,next){
-    db.tasks.remove({_id: mongojs.ObjectId(req.params.id)}, function(err, task){
-        if(err)
-        {
-            res.send(err);
-        }
-        res.json(task);
-    });
+        });
+    } 
 });
 
 module.exports = router;
