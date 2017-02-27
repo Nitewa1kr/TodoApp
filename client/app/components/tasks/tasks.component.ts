@@ -48,7 +48,7 @@ export class TasksComponent
             }
         });
     }
-
+    
     updateStatus(task){
         var _task = {
             _id:task._id,
