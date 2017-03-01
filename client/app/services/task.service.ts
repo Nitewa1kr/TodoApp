@@ -13,6 +13,7 @@ export class TaskService{
         return this.http.get('/api/tasks')
         .map(res => res.json());
     }
+    /*YOU CAN JUST GET TASKS WITH IS DONE TRUE VALUE*/
 
     addTask(newTask)
     {
@@ -27,6 +28,8 @@ export class TaskService{
         return this.http.delete('/api/task/'+id)
         .map(res => res.json());
     }
+
+    /*YOU CAN DELETE TASKS WITH IS DONE TRUE VALUE IS TRUE*/
 
     updateStatus(task)
     {

@@ -16,7 +16,7 @@
 <h5>TODO:</h5>
 <div class="task-list">
     <div *ngFor = "let task of tasks">
-        
+        <div 
             <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
         
             {{task.title}}
