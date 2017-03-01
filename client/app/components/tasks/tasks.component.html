@@ -24,10 +24,12 @@
             <button type="button" (click)="deleteTask(task._id)" value="Delete" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
         
     </div>
+
+    
     <hr/>
     <div class="task-list">
         <div *ngFor = "let task of tasks">
-            <button type="button" (click)="deleteTask(task._id)" class="btn btn-default">{{task.title}}</button>
+            <button type="button" (click)="deleteTask(task._id)" class="btn btn-default">{{task.title}} </button>
         </div>
     </div>
 </div>
