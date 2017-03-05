@@ -5,3 +5,38 @@
 .task{
     text-align: center;
 }
+body{
+    background-color: lightgrey;
+}
+#myCheckBox{display:none;}
+#myBtn{
+    background-color: lightgrey;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.trash
+{
+    float:right;
+}
+
+i:active{
+    color: green;
+}
+
+#trashColor{
+    color: red;
+}
+
+.tasksToDo{
+    width: 100%;
+    align: center;
+}

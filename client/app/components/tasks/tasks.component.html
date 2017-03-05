@@ -12,15 +12,13 @@
 <h5 class="headings">TODO:</h5>
 <div class="task-list">
     <div *ngFor = "let task of tasks">
-        <div class="input-group tasksToDo" *ngIf ="!task.isDone">
-            <span class="input-group-addon">
-                <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
-            </span>
-                <input type="text" class="form-control task" disabled="disabled" value="{{task.title}}">
-            
-            <span class="input-group-btn">
-                <button type="button" (click)="deleteTask(task._id)" value="Delete" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-            </span>
+        <div class="input-group well tasksToDo" *ngIf ="!task.isDone">
+            <label id="myTodos">
+                <i class="fa fa-check ifTrue" aria-hidden="true"></i>
+                <input type="checkbox" id="myCheckBox" [checked]="task.isDone" (click)="updateStatus(task)" class="checkBox">
+                {{task.title}}
+            </label>
+            <i class="fa fa-trash trash" (click)="deleteTask(task._id)" id="trashColor" aria-hidden="true"></i>            
         </div>
     </div>
 
