@@ -1,35 +1,37 @@
-<form class="container">
+<form class="well">
     <div class="form-group">
-        <div class="row">
-            <div class="col-lg-6">
                 <div class="input-group">
                     <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="ADD A TASK TO DO">
-                    <span class="input-group">
-                        <button type="submit" (click)="addTask($event)" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    <span class="input-group-btn">
+                        <button type="submit" (click)="addTask($event)" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></button>
                     </span>
                 </div>
-            </div>
-        </div>
     </div>
 </form>
 
-<h5>TODO:</h5>
+<h5 class="headings">TODO:</h5>
 <div class="task-list">
     <div *ngFor = "let task of tasks">
-        <div 
-            <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
-        
-            {{task.title}}
-        
-            <button type="button" (click)="deleteTask(task._id)" value="Delete" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-        
+        <div class="input-group tasksToDo" *ngIf ="!task.isDone">
+            <span class="input-group-addon">
+                <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
+            </span>
+                <input type="text" class="form-control task" disabled="disabled" value="{{task.title}}">
+            
+            <span class="input-group-btn">
+                <button type="button" (click)="deleteTask(task._id)" value="Delete" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </span>
+        </div>
     </div>
 
     
     <hr/>
+    <h5 class="headings">COMPLETED:</h5>
     <div class="task-list">
         <div *ngFor = "let task of tasks">
-            <button type="button" (click)="deleteTask(task._id)" class="btn btn-default">{{task.title}} </button>
+            <div class="tasksIsDone" *ngIf ="task.isDone">
+                <button type="button" (click)="deleteTask(task._id)" class="btn btn-success btn-block">{{task.title}} </button>
+            </div>
         </div>
     </div>
 </div>

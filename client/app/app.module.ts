@@ -9,6 +9,5 @@ import {TasksComponent} from './components/tasks/tasks.component'
     imports: [ BrowserModule , HttpModule , FormsModule ],
     declarations: [ AppComponent, TasksComponent ],
     bootstrap: [ AppComponent ]
-    //fontawesome: [AppComponent, TasksComponent ]
 })
 export class AppModule{ }

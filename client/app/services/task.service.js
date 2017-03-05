@@ -14,12 +14,12 @@ require("rxjs/add/operator/map");
 var TaskService = (function () {
     function TaskService(http) {
         this.http = http;
-        console.log('Task Service Initialized...');
     }
     TaskService.prototype.getTasks = function () {
         return this.http.get('/api/tasks')
             .map(function (res) { return res.json(); });
     };
+    /*YOU CAN JUST GET TASKS WITH IS DONE TRUE VALUE*/
     TaskService.prototype.addTask = function (newTask) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
@@ -30,6 +30,7 @@ var TaskService = (function () {
         return this.http.delete('/api/task/' + id)
             .map(function (res) { return res.json(); });
     };
+    /*YOU CAN DELETE TASKS WITH IS DONE TRUE VALUE IS TRUE*/
     TaskService.prototype.updateStatus = function (task) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
