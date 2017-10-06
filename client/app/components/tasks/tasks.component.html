@@ -28,7 +28,7 @@
     <div class="task-list">
         <div *ngFor = "let task of tasks">
             <div class="tasksIsDone" *ngIf ="task.isDone">
-                <button type="button" (click)="deleteTask(task._id)" class="btn btn-success btn-block">{{task.title}} </button>
+                <button id="done-btn" type="button" (click)="deleteTask(task._id)" class="btn btn-success btn-block">{{task.title}} </button>
             </div>
         </div>
     </div>
